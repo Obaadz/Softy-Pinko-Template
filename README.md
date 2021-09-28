@@ -1,1 +1,1 @@
-"# Softy Pinko Template" 
+# Softy Pinko Template
