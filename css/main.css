@@ -11,6 +11,8 @@
   --color9: #9d5bd9;
   --color10: #3b566e;
   --color11: #7a7a7a;
+  --color12: #f2f2fe;
+  --marpad: 100px;
 }
 /*End Variables */
 /* Start Global Rules */
@@ -27,7 +29,7 @@ html {
 body {
   font-family: "Raleway", "sans serif";
   line-height: 1.6;
-  height: 200vh;
+  height: 1200vh;
 }
 
 ul {
@@ -50,15 +52,13 @@ p {
 }
 p {
   line-height: 1.8;
-  color: var(--primaryColor2);
 }
 h1,
 h2,
 h3,
 h4 {
-  color: white;
+  font-weight: 500;
 }
-
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -83,17 +83,42 @@ h4 {
   }
 }
 /* End Global Rules */
+/* Start Components */
+.head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.head h3 {
+  font-weight: normal;
+  font-size: 2em;
+}
+.head p {
+  color: var(--color5);
+  margin: 20px auto;
+  max-width: 54ch;
+}
+.child {
+  width: 31%;
+  padding: 20px;
+  border: 1px solid #eeeeee56;
+  border-radius: 20px;
+  box-shadow: 0px 2px 15px 10px #c3c3c311;
+}
+/* End Components */
 /* Start Menu */
 .menu {
-  position: fixed;
   display: flex;
   background: var(--color2);
   padding: 20px 30px;
+  border: 1px solid #dedede4b;
   border-radius: 50px;
+  box-shadow: 0px 7px 20px 6px #dedede3b;
+  position: fixed;
   left: 50%;
   top: 30px;
   transform: translateX(-50%);
   gap: 10%;
+  z-index: 100;
 }
 .menu img {
   height: 30px;
@@ -138,7 +163,6 @@ h4 {
 .landing h2 {
   font-size: 2.5rem;
   max-width: 24ch;
-  font-weight: 500;
 }
 .landing p {
   max-width: 57ch;
@@ -157,3 +181,234 @@ h4 {
   background: var(--color8);
 }
 /* End Landing */
+/* Start Cards */
+.cards {
+  position: relative;
+  top: -180px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  gap: 50px;
+}
+.cards .card {
+  background: var(--color2);
+  padding: 40px;
+  border: 1px solid #fafafaa9;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px 0px #f3eeee6b;
+  cursor: pointer;
+}
+
+.cards .card img {
+  background: var(--color8);
+  padding: 20px 15px;
+  border-radius: 45%;
+  transition: background-color 0.3s;
+}
+.cards .card:hover img {
+  background: var(--color1);
+}
+.cards .card h3 {
+  color: var(--color4);
+  padding: 0 20px;
+}
+.cards .card p {
+  color: var(--color5);
+  font-size: 0.8em;
+}
+.cards .card * + * {
+  margin-top: 15px;
+}
+/* End Cards */
+/* Start Discuss */
+.discuss {
+  margin-top: -70px;
+  padding-bottom: var(--marpad);
+}
+.discuss .content {
+  display: grid;
+  grid-template-columns: auto 50%;
+  justify-content: space-between;
+  padding: 30px 30px 80px;
+}
+.discuss .content:last-child {
+  margin-top: 50px;
+  padding-left: 0;
+  grid-template-columns: 50% auto;
+  justify-content: space-between;
+}
+.discuss .content h3 {
+  margin: 50px 0 20px;
+  font-size: 1.6em;
+}
+.discuss .content p {
+  color: var(--color5);
+  font-size: 1.2em;
+}
+.discuss hr {
+  opacity: 0.2;
+}
+/* End Discuss */
+/* Start Process */
+.process {
+  background: url(../images/work-process-bg.png);
+  background-size: cover;
+  padding: 110px 0px 160px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.process h3 {
+  color: white;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+.process .container > p {
+  color: white;
+  max-width: 57ch;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+.process ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  justify-content: space-between;
+  gap: 30px;
+}
+.process li {
+  background: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 12px 10px 2px 0px #ffffff2a;
+  position: relative;
+  top: 0;
+  transition: top 0.3s;
+}
+.process li:hover {
+  top: -10px;
+  cursor: pointer;
+}
+.process li h4 {
+  font-weight: 400;
+  margin: 10px 0 5px;
+}
+.process li p {
+  color: var(--color5);
+  line-height: 1.5;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+/* End Process */
+/* Start Testimonials */
+.testimonials {
+  padding: var(--marpad) 0;
+}
+
+.testimonials .t-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonials .child:hover .t-emp {
+  gap: 30px;
+}
+.testimonials .child p {
+  max-width: 31ch;
+  font-size: 0.9em;
+  margin: 20px 0;
+  margin-left: 10px;
+  color: var(--color5);
+}
+.testimonials .child > img {
+  position: relative;
+  left: 50%;
+  transform: translateX(calc(-50% - 20px));
+}
+.testimonials .t-emp {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 10px;
+  transition: gap 0.5s;
+}
+.testimonials .t-emp img {
+  border-radius: 50%;
+}
+.testimonials .t-emp-content h4 {
+  font-weight: normal;
+}
+.testimonials .t-emp-content span {
+  color: var(--color1);
+}
+/* End Testimonials */
+/* Start Pricing */
+.price {
+  background: var(--color12);
+  padding: var(--marpad);
+}
+.price p {
+  margin-bottom: 50px;
+}
+
+.price .p-content {
+  display: flex;
+  justify-content: space-between;
+}
+.price .child {
+  background: var(--color2);
+  text-align: center;
+  padding: 20px 40px;
+}
+.price .child h4 {
+  font-size: 1.3em;
+  padding: 20px;
+}
+.price .child .monthly {
+  position: relative;
+  color: var(--color2);
+  background: var(--color8);
+  padding: 20px 0 30px;
+  border-radius: 20px;
+  font-size: 1.75em;
+  font-weight: 500;
+}
+.price .child .monthly.active {
+  background: var(--color1);
+}
+.price .child .monthly::after {
+  content: "monthly";
+  position: absolute;
+  font-size: 0.55em;
+  left: 52%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  font-weight: normal;
+}
+.price .child ul {
+  color: var(--color11);
+  font-size: 0.8em;
+  margin: 30px 0;
+}
+
+.price .child li.not-active {
+  text-decoration: line-through;
+}
+.price .child li + li {
+  margin-top: 10px;
+}
+
+.price .child .btn {
+  color: var(--color2);
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--color8);
+  border-radius: 30px;
+  font-size: 0.8em;
+  transition: background-color 0.3s;
+}
+.price .child .btn:hover {
+  background: var(--color1);
+  cursor: pointer;
+}
+/* End Pricing */
