@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Softy Pinko - CSS & HTML Only</title>
+    <!-- Loading FontsAwesome Library -->
+    <link rel="stylesheet" href="css/all.min.css">
     <!-- Loading Elements Normally -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- main CSS Style -->
@@ -26,7 +28,25 @@
             <li><a href="#blog">Blog Entries</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
+        <span class="bar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
     </div>
+    <script>
+        const spans = document.querySelector(".menu .bar");
+        const ul = document.querySelector(".menu ul")
+        spans.onclick = _ => {
+            spans.children[0].classList.toggle("span-first");
+            spans.children[1].classList.toggle("span-second");
+            spans.children[2].classList.toggle("span-last");
+            ul.classList.toggle("ul-flex");
+            setTimeout(function() {
+                ul.classList.toggle("ul-opacity");
+            },0);
+        }
+    </script>
     <div class="landing">
         <h2>We provide the best strategy
             to grow up your business</h2>
@@ -169,7 +189,7 @@
                         <li class="not-active">Unlimited Emails</li>
                         <li class="not-active">24/7 Security</li>
                     </ul>
-                    <div class="btn">PURCHASE NOW</div>
+                    <div class="btn-1">PURCHASE NOW</div>
                 </div>
                 <div class="child">
                     <h4>Premium</h4>
@@ -182,7 +202,7 @@
                         <li class="not-active">Unlimited Emails</li>
                         <li class="not-active">24/7 Security</li>
                     </ul>
-                    <div class="btn">PURCHASE NOW</div>
+                    <div class="btn-1">PURCHASE NOW</div>
                 </div>
                 <div class="child">
                     <h4>Advanced</h4>
@@ -195,9 +215,98 @@
                         <li>Unlimited Emails</li>
                         <li>24/7 Security</li>
                     </ul>
-                    <div class="btn">PURCHASE NOW</div>
+                    <div class="btn-1">PURCHASE NOW</div>
                 </div>
             </div>
         </section>
+        <section class="counter">
+            <div class="content container">
+                <div class="cnt">
+                    <h4>126</h4>
+                    <div>Project</div>
+                </div>
+                <div class="bullets"></div>
+                <div class="cnt">
+                    <h4>63</h4>
+                    <div>Happy Clients</div>
+                </div>
+                <div class="bullets"></div>
+                <div class="cnt">
+                    <h4>18</h4>
+                    <div>Awards Wins</div>
+                </div>
+                <div class="bullets"></div>
+                <div class="cnt">
+                    <h4>27</h4>
+                    <div>Countries</div>
+                </div>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="head">
+                <h3>Blog Entries</h3>
+                <p>Integer molestie aliquam gravida. Nullam nec arcu finibus, imperdiet nulla vitae, placerat nibh. Cras maximus venenatis molestie.</p>
+            </div>
+            <div class="b-content container">
+                <div class="b-child">
+                    <img src="images/blog-item-01.png" alt="">
+                    <h4>Vivamus ac vehicula dui</h4>
+                    <p>Cras aliquet ligula dui, vitae fermentum velit tincidunt id. Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam egestas augue.</p>
+                    <div class="btn-1">READ MORE</div>
+                </div>
+                <div class="b-child">
+                    <img src="images/blog-item-02.png" alt="">
+                    <h4>Phasellus convallis augue</h4>
+                    <p>Aliquam commodo ornare nisl, et scelerisque nisl dignissim ac. Vestibulum finibus urna ut velit venenatis, vel ultrices sapien mattis.</p>
+                    <div class="btn-1">READ MORE</div>
+                </div>
+                <div class="b-child">
+                    <img src="images/blog-item-03.png" alt="">
+                    <h4>Nam gravida purus non</h4>
+                    <p>Maecenas eu erat vitae dui convallis consequat vel gravida nulla. Vestibulum finibus euismod odio, ut tempus enim varius eu.</p>
+                    <div class="btn-1">READ MORE</div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="head">
+                <h3>Talk To Us</h3>
+                <p>Maecenas pellentesque ante faucibus lectus vulputate sollicitudin. Cras feugiat hendrerit semper.</p>
+            </div>
+            <div class="c-content container">
+                <div class="keep">
+                    <h4>Keep in touch</h4>
+                    <pre>110-220 Quisque diam odio, maximus ac
+consectetur eu, 10260
+auctor non lorem
+
+You are NOT allowed to re-distribute Softy Pinko
+template on any template collection websites.
+Thank you.
+                    </pre>
+                </div>
+                <div class="informations">
+                    <div>
+                        <input type="text" name="username" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="E-Mail Address" required>
+                    </div>
+                    <textarea placeholder="Your Message" name="message" required></textarea>
+                    <div class="btn-1">SEND MESSAGE</div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="f-content container">
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                </div>
+                <hr>
+                <p>COPYRIGHT © 2020 SOFTY PINKO COMPANY BY OBADA</p>
+            </div>
+        </footer>
 </body>
 </html>
